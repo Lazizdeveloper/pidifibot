@@ -7,7 +7,10 @@ import tempfile
 import os
 from flask import Flask, request
 
-TOKEN = os.getenv('BOT_TOKEN', '8532347560:AAGo9-dqbE_RS_UWuZMw3Ne8pC_9IbeGwjo')
+TOKEN = os.getenv('BOT_TOKEN')
+if not TOKEN:
+    raise ValueError("BOT_TOKEN environment variable is required")
+
 bot = telebot.TeleBot(TOKEN)
 app = Flask(__name__)
 
@@ -109,10 +112,20 @@ def webhook():
 def index():
     return "Bot ishlayapti!"
 
+@app.route('/health')
+def health():
+    return "OK"
+
 if __name__ == "__main__":
-    # Webhook o'rnatish
-    bot.remove_webhook()
-    bot.set_webhook(url=f"https://your-railway-url.railway.app/{TOKEN}")
+    # Railway URL ni environment variable dan olish
+    railway_url = os.getenv('RAILWAY_STATIC_URL')
+    if railway_url:
+        webhook_url = f"https://{railway_url}/{TOKEN}"
+        print(f"Setting webhook to: {webhook_url}")
+        bot.remove_webhook()
+        bot.set_webhook(url=webhook_url)
+    else:
+        print("RAILWAY_STATIC_URL not found, webhook will be set manually")
     
     # Flask serverni ishga tushirish
     port = int(os.environ.get('PORT', 5000))

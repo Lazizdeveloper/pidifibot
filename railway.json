@@ -4,7 +4,7 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "python bot.py",
+    "startCommand": "python webhook_bot.py",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
   }
