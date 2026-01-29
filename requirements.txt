@@ -1,0 +1,5 @@
+pyTelegramBotAPI
+Pillow
+pillow-heif
+reportlab
+Flask
