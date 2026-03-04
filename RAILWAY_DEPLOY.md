@@ -13,7 +13,7 @@
 Railway dashboard da:
 1. "Variables" tab ga o'ting
 2. Quyidagi environment variable ni qo'shing:
-   - `BOT_TOKEN` = sizning bot tokeningiz (8532347560:AAGo9-dqbE_RS_UWuZMw3Ne8pC_9IbeGwjo)
+   - `BOT_TOKEN` = sizning bot tokeningiz
 
 ## 4. Deploy qilish
 1. Railway avtomatik deploy qiladi

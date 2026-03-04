@@ -14,7 +14,7 @@
   - Start Command: python bot.py
 
 ## 3. Environment Variables qo'shing
-- BOT_TOKEN = 8532347560:AAGo9-dqbE_RS_UWuZMw3Ne8pC_9IbeGwjo
+- BOT_TOKEN = sizning bot tokeningiz
 
 ## 4. Deploy qiling
 - "Create Web Service" tugmasini bosing

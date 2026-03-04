@@ -6,7 +6,9 @@ import threading
 import tempfile
 import os
 
-TOKEN = os.getenv('BOT_TOKEN', '8532347560:AAGo9-dqbE_RS_UWuZMw3Ne8pC_9IbeGwjo')
+TOKEN = os.getenv("BOT_TOKEN")
+if not TOKEN:
+    raise ValueError("BOT_TOKEN environment variable is required")
 bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
@@ -108,4 +110,3 @@ def handle_file(message):
         bot.reply_to(message, f"Ошибка: {e}")
 
 bot.infinity_polling()
-

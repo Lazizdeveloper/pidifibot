@@ -3,3 +3,4 @@ Pillow
 pillow-heif
 reportlab
 Flask
+requests
