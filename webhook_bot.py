@@ -7,7 +7,7 @@ import tempfile
 import os
 from flask import Flask, request
 
-TOKEN = os.getenv('BOT_TOKEN')
+TOKEN = (os.getenv('BOT_TOKEN') or '').strip()
 if not TOKEN:
     raise ValueError("BOT_TOKEN environment variable is required")
 

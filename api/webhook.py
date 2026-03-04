@@ -8,7 +8,7 @@ from PIL import Image
 
 app = Flask(__name__)
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
+BOT_TOKEN = (os.getenv("BOT_TOKEN") or "").strip()
 WEBHOOK_SECRET = os.getenv("WEBHOOK_SECRET")
 TELEGRAM_API = f"https://api.telegram.org/bot{BOT_TOKEN}" if BOT_TOKEN else None
 TELEGRAM_FILE_API = f"https://api.telegram.org/file/bot{BOT_TOKEN}" if BOT_TOKEN else None
